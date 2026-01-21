@@ -49,4 +49,7 @@ dependencies {
     // implementation ('com.google.code.gson:gson:2.8.6') {
     //     transitive = false
     // }
+
+    modImplementation files("bubbles/Bubbles-2.4.9-dev.jar")
+    modImplementation files("projecte/ProjectE-1.12.2-PE1.4.1-dev.jar")
 }
