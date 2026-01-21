@@ -20,7 +20,7 @@ Edit gradle.properties and set your modid, mod version, mod name, package, etc.
 
 If you are writing a coremod, remember to set related settings to true.
 
-### Reference Class
+### com.github.barnabeepickle.projectecharm.Reference Class
 Mostly used to store mod version so you can fill it to `@Mod`.
 
 You should change its location to fit your new package name.
