@@ -1,6 +1,7 @@
 package com.github.barnabeepickle.projectecharm.networking.messages;
 
 import baubles.api.BaublesApi;
+import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -13,33 +14,41 @@ public class UseCharmMessage implements IMessage {
 
     }
 
-    int toSend;
-    public UseCharmMessage(int toSend) {
-        this.toSend = toSend;
+    private int charm;
+
+    public UseCharmMessage(int charm) {
+        this.charm = charm;
     }
 
     @Override
-    public void fromBytes(ByteBuf byteBuf) {
-        byteBuf.writeInt(toSend);
+    public void fromBytes(ByteBuf buf) {
+        this.charm = buf.readInt();
     }
 
     @Override
-    public void toBytes(ByteBuf byteBuf) {
-        toSend = byteBuf.readInt();
+    public void toBytes(ByteBuf buf) {
+        buf.writeInt(this.charm);
     }
 
     public static class Handler implements IMessageHandler<UseCharmMessage, IMessage> {
         @Override
         public IMessage onMessage(UseCharmMessage message, MessageContext ctx) {
-            // This is the player the packet was sent to the server from
+            CharmMod.LOGGER.info("Server recieved packet from client");
+            // This is the player the packet whose client sent the packet
             EntityPlayerMP serverPlayer = ctx.getServerHandler().player;
+            int charmID = message.charm;
             // Execute the action on the main server thread by adding it as a scheduled task
             serverPlayer.getServerWorld().addScheduledTask(() -> {
-                switch (message.toSend) {
+                switch (charmID) {
                     case 0: // TRANSMUTATION_CHARM
+                        CharmMod.LOGGER.info("Checking if the transmutation GUI can open");
                         if (BaublesApi.isBaubleEquipped(serverPlayer, new TransmutationCharm()) != -1) {
+                            CharmMod.LOGGER.info("Attempting to open transmutation GUI");
                             TransmutationCharm.openTransmutationGUI(serverPlayer.world, serverPlayer);
                         }
+                        break;
+                    default:
+                        CharmMod.LOGGER.warn("CharmID was {}, no value was selected", charmID);
                 }
 
             });

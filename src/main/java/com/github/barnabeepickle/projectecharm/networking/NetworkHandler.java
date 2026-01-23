@@ -13,7 +13,10 @@ public class NetworkHandler {
 
     public static final SimpleNetworkWrapper INSTANCE = NetworkRegistry.INSTANCE.newSimpleChannel(Tags.MODID);
 
-    public static void registerPackets () {
-        NetworkHandler.INSTANCE.registerMessage(UseCharmMessage.Handler.class, UseCharmMessage.class, id++, Side.SERVER);
+    public static void initMessages() {
+        NetworkHandler.INSTANCE.registerMessage(UseCharmMessage.Handler.class, UseCharmMessage.class, id, Side.CLIENT);
+        NetworkHandler.INSTANCE.registerMessage(UseCharmMessage.Handler.class, UseCharmMessage.class, id, Side.SERVER);
+        id++;
+
     }
 }

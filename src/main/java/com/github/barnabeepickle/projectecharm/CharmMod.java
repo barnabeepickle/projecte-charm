@@ -33,17 +33,19 @@ public class CharmMod {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        charmKeybind = new KeyBinding("key." + Tags.MODID + ".charm.transmutation", KeyConflictContext.IN_GAME, Keyboard.KEY_K, "key.category." + Tags.MODID);
-        ClientRegistry.registerKeyBinding(charmKeybind);
-        //LOGGER.info("Registered " + Tags.MOD_NAME + " keybinds");
-
-        NetworkHandler.registerPackets();
-        //LOGGER.info("Registered " + Tags.MOD_NAME + " network packets");
+        NetworkHandler.initMessages();
+        LOGGER.info("Registered " + Tags.MOD_NAME + " network packets");
 
         MinecraftForge.EVENT_BUS.register(ModItemsEvent.class);
-        //LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
+        LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
+
+
+        charmKeybind = new KeyBinding("key." + Tags.MODID + ".charm.transmutation", KeyConflictContext.IN_GAME, Keyboard.KEY_K, "key.category." + Tags.MODID);
+        ClientRegistry.registerKeyBinding(charmKeybind);
+        LOGGER.info("Registered " + Tags.MOD_NAME + " keybinds");
+
         MinecraftForge.EVENT_BUS.register(ClientEventListener.class);
-        //LOGGER.info("Registered " + Tags.MOD_NAME + " CharmMod.ClientEventListener.class on the EVENT_BUS");
+        LOGGER.info("Registered " + Tags.MOD_NAME + " CharmMod.ClientEventListener.class on the EVENT_BUS");
     }
 
     public static class ClientEventListener {
@@ -54,6 +56,7 @@ public class CharmMod {
                 Minecraft client = Minecraft.getMinecraft();
                 while (charmKeybind.isPressed()) {
                     if (client.player != null && !client.isGamePaused()) {
+                        LOGGER.info("Client attempting to send packet to server");
                         NetworkHandler.INSTANCE.sendToServer(new UseCharmMessage(TRANSMUTATION_CHARM));
                     }
                 }
