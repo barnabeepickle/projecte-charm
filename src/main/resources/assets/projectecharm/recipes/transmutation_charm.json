@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "projecte:item.pe_transmutation_tablet"
+    },
+    {
+      "item": "projecte:item.pe_matter",
+      "data": 1
+    },
+    {
+      "item": "projecte:item.pe_ring_iron_band"
+    }
+  ],
+  "result": {
+    "item": "projectecharm:transmutation_charm"
+  }
+}
