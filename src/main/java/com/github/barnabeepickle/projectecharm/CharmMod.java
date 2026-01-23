@@ -1,10 +1,16 @@
 package com.github.barnabeepickle.projectecharm;
 
+import baubles.api.BaublesApi;
+import baubles.api.cap.IBaublesItemHandler;
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
+import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
 import com.github.barnabeepickle.projectecharm.networking.messages.UseCharmMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.settings.KeyConflictContext;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -34,19 +40,35 @@ public class CharmMod {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         NetworkHandler.initMessages();
-        LOGGER.info("Registered " + Tags.MOD_NAME + " network packets");
+        //LOGGER.info("Registered " + Tags.MOD_NAME + " network packets");
 
         MinecraftForge.EVENT_BUS.register(ModItemsEvent.class);
-        LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
+        //LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
 
 
         charmKeybind = new KeyBinding("key." + Tags.MODID + ".charm.transmutation", KeyConflictContext.IN_GAME, Keyboard.KEY_K, "key.category." + Tags.MODID);
         ClientRegistry.registerKeyBinding(charmKeybind);
-        LOGGER.info("Registered " + Tags.MOD_NAME + " keybinds");
+        //LOGGER.info("Registered " + Tags.MOD_NAME + " keybinds");
 
         MinecraftForge.EVENT_BUS.register(ClientEventListener.class);
-        LOGGER.info("Registered " + Tags.MOD_NAME + " CharmMod.ClientEventListener.class on the EVENT_BUS");
+        //LOGGER.info("Registered " + Tags.MOD_NAME + " CharmMod.ClientEventListener.class on the EVENT_BUS");
     }
+
+    public static boolean checkForBaubleByClass(EntityPlayer player, Class<?> clazz) {
+        IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
+
+        for(int i = 0; i < handler.getSlots(); ++i) {
+            //LOGGER.info("checking baubles {}, {}", handler.getStackInSlot(i).getItem().getClass(), i);
+            if (!handler.getStackInSlot(i).isEmpty() && handler.getStackInSlot(i).getItem() != Items.AIR) {
+                if (handler.getStackInSlot(i).getItem().getClass() == clazz) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
     public static class ClientEventListener {
         @SideOnly(Side.CLIENT)
@@ -56,8 +78,11 @@ public class CharmMod {
                 Minecraft client = Minecraft.getMinecraft();
                 while (charmKeybind.isPressed()) {
                     if (client.player != null && !client.isGamePaused()) {
-                        LOGGER.info("Client attempting to send packet to server");
-                        NetworkHandler.INSTANCE.sendToServer(new UseCharmMessage(TRANSMUTATION_CHARM));
+                        //LOGGER.info("Client checking if the player has the charm");
+                        if (CharmMod.checkForBaubleByClass(client.player, TransmutationCharm.class)) {
+                            //LOGGER.info("Client attempting to send packet to server");
+                            NetworkHandler.INSTANCE.sendToServer(new UseCharmMessage(TRANSMUTATION_CHARM));
+                        }
                     }
                 }
             }

@@ -1,6 +1,7 @@
 package com.github.barnabeepickle.projectecharm.networking.messages;
 
 import baubles.api.BaublesApi;
+import baubles.api.cap.IBaublesItemHandler;
 import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import io.netty.buffer.ByteBuf;
@@ -33,7 +34,7 @@ public class UseCharmMessage implements IMessage {
     public static class Handler implements IMessageHandler<UseCharmMessage, IMessage> {
         @Override
         public IMessage onMessage(UseCharmMessage message, MessageContext ctx) {
-            CharmMod.LOGGER.info("Server recieved packet from client");
+            //CharmMod.LOGGER.info("Server recieved packet from client");
             // This is the player the packet whose client sent the packet
             EntityPlayerMP serverPlayer = ctx.getServerHandler().player;
             int charmID = message.charm;
@@ -41,14 +42,13 @@ public class UseCharmMessage implements IMessage {
             serverPlayer.getServerWorld().addScheduledTask(() -> {
                 switch (charmID) {
                     case 0: // TRANSMUTATION_CHARM
-                        CharmMod.LOGGER.info("Checking if the transmutation GUI can open");
-                        if (BaublesApi.isBaubleEquipped(serverPlayer, new TransmutationCharm()) != -1) {
-                            CharmMod.LOGGER.info("Attempting to open transmutation GUI");
+                        if (CharmMod.checkForBaubleByClass(serverPlayer, TransmutationCharm.class)) {
+                            //CharmMod.LOGGER.info("Attempting to open transmutation GUI");
                             TransmutationCharm.openTransmutationGUI(serverPlayer.world, serverPlayer);
                         }
                         break;
                     default:
-                        CharmMod.LOGGER.warn("CharmID was {}, no value was selected", charmID);
+                        //CharmMod.LOGGER.warn("CharmID was {}, no value was selected", charmID);
                 }
 
             });

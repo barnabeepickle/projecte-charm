@@ -15,7 +15,8 @@ public class ModItemsEvent {
         IForgeRegistry<Item> itemEvent = event.getRegistry();
 
         // Register items here
-        registerEntry(itemEvent, new TransmutationCharm(), "transmutation_charm");
+        registerEntry(itemEvent, new TransmutationCharm(), TransmutationCharm.getName());
+
     }
 
     // Utility methods
