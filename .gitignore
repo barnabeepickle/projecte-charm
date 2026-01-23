@@ -25,3 +25,6 @@ gradle-app.setting
 # IDEA config
 .idea
 
+# Library Folders
+bubbles/
+projecte/
