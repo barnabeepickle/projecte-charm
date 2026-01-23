@@ -37,6 +37,8 @@ public class CharmMod {
 
     private static KeyBinding charmKeybind;
 
+    private static final String keyCategory = "key.category." + Tags.MODID;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         NetworkHandler.initMessages();
@@ -46,7 +48,7 @@ public class CharmMod {
         //LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
 
 
-        charmKeybind = new KeyBinding("key." + Tags.MODID + ".charm.transmutation", KeyConflictContext.IN_GAME, Keyboard.KEY_K, "key.category." + Tags.MODID);
+        charmKeybind = new KeyBinding("key." + Tags.MODID + ".charm.transmutation", KeyConflictContext.IN_GAME, Keyboard.KEY_K, keyCategory);
         ClientRegistry.registerKeyBinding(charmKeybind);
         //LOGGER.info("Registered " + Tags.MOD_NAME + " keybinds");
 
