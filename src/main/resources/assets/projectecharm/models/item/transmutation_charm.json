@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "projectecharm:items/transmutation_charm"
+    "layer0": "projecte:items/rings/iron_band",
+    "layer1": "projectecharm:items/overlays/transmutation_charm_overlay"
   }
 }

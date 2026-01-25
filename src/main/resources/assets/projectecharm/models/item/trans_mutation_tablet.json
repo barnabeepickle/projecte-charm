@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "projecte:items/transmute_tablet",
+    "layer1": "projectecharm:items/overlays/trans_mutation_tablet_overlay"
+  }
+}

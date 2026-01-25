@@ -3,6 +3,7 @@ package com.github.barnabeepickle.projectecharm.networking.messages;
 import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
 import com.github.barnabeepickle.projectecharm.CharmMod;
+import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -42,7 +43,7 @@ public class UseCharmMessage implements IMessage {
             serverPlayer.getServerWorld().addScheduledTask(() -> {
                 switch (charmID) {
                     case 0: // TRANSMUTATION_CHARM
-                        if (CharmMod.checkForBaubleByClass(serverPlayer, TransmutationCharm.class)) {
+                        if (CharmMod.checkForBaubleByClass(serverPlayer, TransmutationCharm.class) || CharmMod.checkForBaubleByClass(serverPlayer, TransMutationCharm.class)) {
                             //CharmMod.LOGGER.info("Attempting to open transmutation GUI");
                             TransmutationCharm.openTransmutationGUI(serverPlayer.world, serverPlayer);
                         }

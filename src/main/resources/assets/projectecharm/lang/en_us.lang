@@ -1,5 +1,10 @@
 key.category.projectecharm=ProjectE Charms
-
 key.projectecharm.charm.transmutation=Use Transmutation Charm
 
-item.pe_transmutation_charm.name=Transmutation Charm
+
+item.transmutation_tablet.name=Transmutation Tablet
+item.trans_mutation_tablet.name=Trans-mutation Tablet
+
+item.transmutation_charm.name=Transmutation Charm
+item.trans_mutation_charm.name=Trans-mutation Charm
+item.transmutation_charm.tooltip=Press %s to open the Transmutation Menu

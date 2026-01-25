@@ -13,6 +13,6 @@ public class Tags {
     public static final String VERSION = "{{ mod_version }}";
 
     public static class CharmActions {
-        public static int TRANSMUTATION_CHARM = 0;
+        public static int TRANSMUTATION_CHARM_ACTION = 0;
     }
 }
