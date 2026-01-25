@@ -7,4 +7,5 @@ item.trans_mutation_tablet.name=Trans-mutation Tablet
 
 item.transmutation_charm.name=Transmutation Charm
 item.trans_mutation_charm.name=Trans-mutation Charm
-item.transmutation_charm.tooltip=Press %s to open the Transmutation Menu
+item.transmutation_charm.tooltip.line0=Equip this bauble and then
+item.transmutation_charm.tooltip.line1=press %s to open the Transmutation Menu

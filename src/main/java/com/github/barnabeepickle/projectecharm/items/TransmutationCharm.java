@@ -47,6 +47,7 @@ public class TransmutationCharm extends TransmutationTablet implements IBauble {
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World world, List<String> list, ITooltipFlag flags)
     {
-        list.add(I18n.format("item.transmutation_charm.tooltip", ClientKeyHelper.getKeyName(CharmMod.charmKeybind)));
+        list.add(I18n.format("item.transmutation_charm.tooltip.line0"));
+        list.add(I18n.format("item.transmutation_charm.tooltip.line1", ClientKeyHelper.getKeyName(CharmMod.charmKeybind)));
     }
 }
