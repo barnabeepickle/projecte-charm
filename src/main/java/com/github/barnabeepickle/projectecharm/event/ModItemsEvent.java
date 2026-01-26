@@ -1,15 +1,14 @@
 package com.github.barnabeepickle.projectecharm.event;
 
-import com.github.barnabeepickle.projectecharm.Tags;
 import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransMutationTablet;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.IForgeRegistryEntry;
+
+import static com.github.barnabeepickle.projectecharm.utils.RegisteryUtilities.registerEntry;
 
 public class ModItemsEvent {
     public static TransmutationCharm TRANSMUTATION_CHARM = new TransmutationCharm();
@@ -26,15 +25,4 @@ public class ModItemsEvent {
         registerEntry(itemEvent, TRANS_MUTATION_TABLET, TransMutationTablet.getName());
 
     }
-
-    // Utility methods
-
-    private static <V extends IForgeRegistryEntry<V>> void registerEntry(IForgeRegistry<V> registry, IForgeRegistryEntry<V> o, String name) {
-        registerEntry(registry, o, new ResourceLocation(Tags.MODID, name));
-    }
-
-    private static <V extends IForgeRegistryEntry<V>> void registerEntry(IForgeRegistry<V> registry, IForgeRegistryEntry<V> o, ResourceLocation name) {
-        registry.register(o.setRegistryName(name));
-    }
-
 }
