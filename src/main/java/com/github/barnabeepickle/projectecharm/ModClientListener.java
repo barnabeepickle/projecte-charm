@@ -4,6 +4,7 @@ import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
 import com.github.barnabeepickle.projectecharm.networking.messages.UseCharmMessage;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,6 +21,7 @@ import java.util.Objects;
 
 import static com.github.barnabeepickle.projectecharm.CharmMod.charmKeybind;
 import static com.github.barnabeepickle.projectecharm.Tags.CharmActions.TRANSMUTATION_CHARM_ACTION;
+import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.TRANS_MUTATION_TABLE;
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.*;
 
 public class ModClientListener {
@@ -47,11 +49,18 @@ public class ModClientListener {
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent evt) {
+        registerItemModels();
+        registerItemBlockModels();
+    }
+
+    public static void registerItemModels() {
+        // register item models here
         registerItem(TRANSMUTATION_CHARM);
         registerItem(TRANS_MUTATION_CHARM);
         registerItem(TRANS_MUTATION_TABLET);
     }
 
+    // Item model registration utilities
     private static void registerItem(Item item)
     {
         registerItem(item, 0);
@@ -61,5 +70,17 @@ public class ModClientListener {
     {
         String name = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).toString();
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name, "inventory"));
+    }
+
+    public static void registerItemBlockModels() {
+        // register block item models here
+        registerItemBlock(TRANS_MUTATION_TABLE);
+    }
+
+    // Block Item model registration utility
+    private static void registerItemBlock(Block block)
+    {
+        String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).toString();
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(name, "inventory"));
     }
 }

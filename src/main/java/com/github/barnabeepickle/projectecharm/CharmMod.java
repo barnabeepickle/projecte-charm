@@ -2,12 +2,9 @@ package com.github.barnabeepickle.projectecharm;
 
 import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
+import com.github.barnabeepickle.projectecharm.event.ModBlocksEvent;
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
-import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
-import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
-import com.github.barnabeepickle.projectecharm.networking.messages.UseCharmMessage;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -19,8 +16,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjglx.input.Keyboard;
-
-import static com.github.barnabeepickle.projectecharm.Tags.CharmActions.TRANSMUTATION_CHARM_ACTION;
 
 @Mod(modid = Tags.MODID, name = Tags.MOD_NAME, version = Tags.VERSION,
         dependencies = "after-required:baubles@[2.4.9,);after-required:projecte;"
@@ -42,6 +37,7 @@ public class CharmMod {
 
         MinecraftForge.EVENT_BUS.register(ModItemsEvent.class);
         //LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
+        MinecraftForge.EVENT_BUS.register(ModBlocksEvent.class);
 
 
         charmKeybind = new KeyBinding("key." + Tags.MODID + ".charm.transmutation", KeyConflictContext.IN_GAME, Keyboard.KEY_K, keyCategory);
