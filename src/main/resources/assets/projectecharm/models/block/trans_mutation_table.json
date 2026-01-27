@@ -1,7 +1,7 @@
 {
   "textures": {
     "bottom": "projecte:blocks/transmutation_stone/bottom",
-    "top": "projectecharm:blocks/trans_mutation_tablet/trans_top",
+    "top": "projectecharm:blocks/trans_mutation_table/trans_top",
     "side": "projecte:blocks/transmutation_stone/side",
     "particle": "projecte:blocks/transmutation_stone/top"
   },
