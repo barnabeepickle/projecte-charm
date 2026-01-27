@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "projectecharm:trans_mutation_tablet"
+  },
+  "pattern": [
+    "MSM",
+    "STS",
+    "MSM"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "S": {
+      "item": "#STONE"
+    },
+    "M": {
+      "item": "projecte:matter_block",
+      "data": 0
+    },
+    "T": {
+      "item": "projectecharm:trans_mutation_table"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "projecte:transmutation_table"
+    },
+    {
+      "item": "minecraft:wool",
+      "data": 0
+    },
+    {
+      "item": "minecraft:wool",
+      "data": 3
+    },
+    {
+      "item": "minecraft:wool",
+      "data": 6
+    }
+  ],
+  "result": {
+    "item": "projectecharm:trans_mutation_table"
+  }
+}
