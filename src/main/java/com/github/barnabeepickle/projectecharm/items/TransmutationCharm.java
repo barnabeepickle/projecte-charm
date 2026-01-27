@@ -2,12 +2,10 @@ package com.github.barnabeepickle.projectecharm.items;
 
 import baubles.api.IBauble;
 import com.github.barnabeepickle.projectecharm.CharmMod;
-import com.github.barnabeepickle.projectecharm.Tags;
 import com.github.barnabeepickle.projectecharm.items.custom.TransmutationTablet;
 import moze_intel.projecte.PECore;
 import moze_intel.projecte.utils.ClientKeyHelper;
 import moze_intel.projecte.utils.Constants;
-import moze_intel.projecte.utils.PEKeybind;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;

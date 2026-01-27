@@ -11,8 +11,4 @@ public class Tags {
     public static final String MODID = "{{ mod_id }}";
     public static final String MOD_NAME = "{{ mod_name }}";
     public static final String VERSION = "{{ mod_version }}";
-
-    public static class CharmActions {
-        public static int TRANSMUTATION_CHARM_ACTION = 0;
-    }
 }

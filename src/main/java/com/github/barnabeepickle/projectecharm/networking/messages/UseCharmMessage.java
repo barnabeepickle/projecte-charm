@@ -1,7 +1,5 @@
 package com.github.barnabeepickle.projectecharm.networking.messages;
 
-import baubles.api.BaublesApi;
-import baubles.api.cap.IBaublesItemHandler;
 import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;

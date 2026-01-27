@@ -1,5 +1,6 @@
-package com.github.barnabeepickle.projectecharm;
+package com.github.barnabeepickle.projectecharm.client;
 
+import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
@@ -20,7 +21,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Objects;
 
 import static com.github.barnabeepickle.projectecharm.CharmMod.charmKeybind;
-import static com.github.barnabeepickle.projectecharm.Tags.CharmActions.TRANSMUTATION_CHARM_ACTION;
+import static com.github.barnabeepickle.projectecharm.Constants.CharmActions.TRANSMUTATION_CHARM_ACTION;
 import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.TRANS_MUTATION_TABLE;
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.*;
 

@@ -10,7 +10,6 @@ import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
 import java.util.Objects;

@@ -2,6 +2,7 @@ package com.github.barnabeepickle.projectecharm;
 
 import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
+import com.github.barnabeepickle.projectecharm.client.ModClientListener;
 import com.github.barnabeepickle.projectecharm.event.ModBlocksEvent;
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
