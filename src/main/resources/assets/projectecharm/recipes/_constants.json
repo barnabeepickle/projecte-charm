@@ -1,0 +1,9 @@
+[
+  {
+    "name": "STONE",
+    "ingredient": {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    }
+  }
+]
