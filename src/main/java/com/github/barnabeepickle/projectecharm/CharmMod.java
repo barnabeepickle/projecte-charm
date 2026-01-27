@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 import org.lwjglx.input.Keyboard;
 
 @Mod(modid = Tags.MODID, name = Tags.MOD_NAME, version = Tags.VERSION,
-        dependencies = "after-required:baubles@[2.4.9,);after-required:projecte;"
+        dependencies = "after-required:baubles;after-required:projecte;"
 )
 @Mod.EventBusSubscriber
 public class CharmMod {
