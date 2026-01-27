@@ -50,6 +50,6 @@ dependencies {
     //     transitive = false
     // }
 
-    modImplementation files("bubbles/Bubbles-2.4.9.jar")
-    modImplementation files("projecte/ProjectE-1.12.2-PE1.4.1-universal.jar")
+    modImplementation "curse.maven:bubbles-a-baubles-fork-995393:6807550"
+    modImplementation "curse.maven:projecte-226410:2702991"
 }
