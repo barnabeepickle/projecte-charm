@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "projecte:transmutation_table"
+    },
+    {
+      "item": "projecte:transmutation_table"
+    },
+    {
+      "item": "projecte:transmutation_table"
+    },
+    {
+      "item": "projecte:transmutation_table"
+    }
+  ],
+  "result": {
+    "item": "projectecharm:big_transmutation_table"
+  }
+}
