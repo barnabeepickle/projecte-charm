@@ -23,7 +23,7 @@ public class UpsideDownTransmutationTable extends TransmutationTable {
     }
 
     private static final AxisAlignedBB AABB = new AxisAlignedBB(
-            // Use for the block outline
+            // Used for the block outline
             0.0F,  // minX
             0.75F, // minY
             0.0F,  // minZ
