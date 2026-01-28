@@ -8,6 +8,7 @@ import net.minecraft.world.IBlockAccess;
 import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class BigTransmutationTable extends TransmutationTable {
     public BigTransmutationTable() {
@@ -23,13 +24,13 @@ public class BigTransmutationTable extends TransmutationTable {
     }
 
     private static final AxisAlignedBB AABB = new AxisAlignedBB(
-            // Use for the block outline
-            0.0F,  // minX
+            // Used for the block outline
+            -0.5F,  // minX
             0.0F, // minY
-            0.0F,  // minZ
-            1.0F,  // maxX
+            -0.5F,  // minZ
+            1.5F,  // maxX
             0.25F,  // maxY
-            1.0F   // maxZ
+            1.5F   // maxZ
     );
 
     @Nonnull
