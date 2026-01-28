@@ -11,5 +11,7 @@ item.transmutation_charm.tooltip.line0=Equip this bauble and then press
 item.transmutation_charm.tooltip.line1=%s to open the Transmutation Menu
 
 tile.trans_mutation_table.name=Trans-mutation Table
-
 tile.upside_down_transmutation_table.name=Table Transmutation
+
+tile.big_transmutation_table.name=Big Transmutation Table
+tile.big_transmutation_table.tooltip=Exactly what it says on the tin.
