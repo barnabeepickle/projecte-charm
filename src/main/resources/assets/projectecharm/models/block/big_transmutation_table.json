@@ -1,23 +1,23 @@
 {
 	"format_version": "1.9.0",
-	"credit": "Made with Blockbench",
+	"credit": "Made with Blockbench, manually edited by barnabeepickle",
 	"textures": {
-		"4": "top",
-		"5": "side",
-		"6": "bottom",
-		"particle": "top"
+		"face": "projecte:blocks/transmutation_stone/top",
+		"back": "projecte:blocks/transmutation_stone/bottom",
+		"side": "projecte:blocks/transmutation_stone/side",
+		"particle": "projecte:blocks/transmutation_stone/top"
 	},
 	"elements": [
 		{
 			"from": [-8, 0, -8],
 			"to": [24, 4, 24],
 			"faces": {
-				"north": {"uv": [0, 12, 16, 16], "texture": "#5", "cullface": "north"},
-				"east": {"uv": [0, 12, 16, 16], "texture": "#5", "cullface": "east"},
-				"south": {"uv": [0, 12, 16, 16], "texture": "#5", "cullface": "south"},
-				"west": {"uv": [0, 12, 16, 16], "texture": "#5", "cullface": "west"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#6", "cullface": "down"}
+				"up": {"uv": [0, 0, 16, 16], "texture": "#face"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#back", "cullface": "down"},
+				"north": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "north"},
+				"south": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "south"},
+				"east": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "east"},
+				"west": {"uv": [0, 12, 16, 16], "texture": "#side", "cullface": "west"}
 			}
 		}
 	]
