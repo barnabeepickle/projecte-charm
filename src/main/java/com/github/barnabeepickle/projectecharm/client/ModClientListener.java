@@ -67,6 +67,7 @@ public class ModClientListener {
         registerItem(item, 0);
     }
 
+    @SuppressWarnings("SameParameterValue")
     private static void registerItem(Item item, int meta)
     {
         String name = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)).toString();
