@@ -15,7 +15,9 @@ The following is a list of items added by this mod:
  - The `Transmutation Charm` functions like the base Transmutation Tablet but when equiped as a bauble gives you a keybind that opens the Transmutation GUI.
  - The `Trans-mutation Charm` the same as the normal charm but with a trans flag on the texture.
  - The `Trans-mutation Tablet` a Transmutation Tablet with a trans flag on the texture.
- - The `Trans-mutation Table` a Tranmutation Table with a trans flag on the top of it's texture.
+ - The `Trans-mutation Table` a Transmutation Table with a trans flag on the top of it's texture.
+ - The `Table Transmutation` an upside down Transmutation Table.
+ - The `Big Transmutation Table` just a 2x scaled Transmutation Table.
 
 ### Why
 
