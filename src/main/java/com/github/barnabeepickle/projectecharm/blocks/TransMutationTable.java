@@ -1,11 +1,11 @@
 package com.github.barnabeepickle.projectecharm.blocks;
 
-import moze_intel.projecte.gameObjs.blocks.TransmutationStone;
+import com.github.barnabeepickle.projectecharm.blocks.custom.TransmutationTable;
 import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
 
-public class TransMutationTable extends TransmutationStone {
+public class TransMutationTable extends TransmutationTable {
     public TransMutationTable() {
         super();
         this.setTranslationKey(name);
