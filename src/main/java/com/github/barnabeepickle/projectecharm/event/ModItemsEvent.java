@@ -1,5 +1,6 @@
 package com.github.barnabeepickle.projectecharm.event;
 
+import com.github.barnabeepickle.projectecharm.blocks.BigTransmutationTable;
 import com.github.barnabeepickle.projectecharm.blocks.TransMutationTable;
 import com.github.barnabeepickle.projectecharm.blocks.UpsideDownTransmutationTable;
 import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
@@ -11,8 +12,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.TRANS_MUTATION_TABLE;
-import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.UPSIDE_DOWN_TRANSMUTATION_TABLE;
+import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.*;
 import static com.github.barnabeepickle.projectecharm.utils.RegisteryUtilities.registerEntry;
 
 public class ModItemsEvent {
@@ -22,6 +22,7 @@ public class ModItemsEvent {
 
     public static ItemTransmutationBlock ITEM_TRANS_MUTATION_TABLE = new ItemTransmutationBlock(TRANS_MUTATION_TABLE);
     public static ItemTransmutationBlock ITEM_UPSIDE_DOWN_TRANSMUTATION_TABLE = new ItemTransmutationBlock(UPSIDE_DOWN_TRANSMUTATION_TABLE);
+    public static ItemTransmutationBlock ITEM_BIG_TRANSMUTATION_TABLE = new ItemTransmutationBlock(BIG_TRANSMUTATION_TABLE);
 
     @SubscribeEvent
     public static void registerItemsEvent(RegistryEvent.Register<Item> event) {
@@ -35,5 +36,6 @@ public class ModItemsEvent {
         // Register block items here
         registerEntry(itemEvent, ITEM_TRANS_MUTATION_TABLE, TransMutationTable.getName());
         registerEntry(itemEvent, ITEM_UPSIDE_DOWN_TRANSMUTATION_TABLE, UpsideDownTransmutationTable.getName());
+        registerEntry(itemEvent, ITEM_BIG_TRANSMUTATION_TABLE, BigTransmutationTable.getName());
     }
 }

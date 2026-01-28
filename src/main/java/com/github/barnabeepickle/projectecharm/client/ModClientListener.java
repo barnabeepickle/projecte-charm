@@ -22,8 +22,7 @@ import java.util.Objects;
 
 import static com.github.barnabeepickle.projectecharm.CharmMod.charmKeybind;
 import static com.github.barnabeepickle.projectecharm.Constants.CharmActions.TRANSMUTATION_CHARM_ACTION;
-import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.TRANS_MUTATION_TABLE;
-import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.UPSIDE_DOWN_TRANSMUTATION_TABLE;
+import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.*;
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.*;
 
 public class ModClientListener {
@@ -78,6 +77,7 @@ public class ModClientListener {
         // register block item models here
         registerItemBlock(TRANS_MUTATION_TABLE);
         registerItemBlock(UPSIDE_DOWN_TRANSMUTATION_TABLE);
+        registerItemBlock(BIG_TRANSMUTATION_TABLE);
     }
 
     // Block Item model registration utility
