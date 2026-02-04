@@ -4,8 +4,8 @@ import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
 
-public class TransMutationCharm extends TransmutationCharm {
-    public TransMutationCharm() {
+public class TransGenderMutationCharm extends TransmutationCharm {
+    public TransGenderMutationCharm() {
         this.setTranslationKey(name);
         this.setMaxStackSize(1);
     }

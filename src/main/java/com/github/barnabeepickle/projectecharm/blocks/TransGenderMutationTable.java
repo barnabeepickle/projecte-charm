@@ -5,8 +5,8 @@ import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
 
-public class TransMutationTable extends TransmutationTable {
-    public TransMutationTable() {
+public class TransGenderMutationTable extends TransmutationTable {
+    public TransGenderMutationTable() {
         super();
         this.setTranslationKey(name);
     }

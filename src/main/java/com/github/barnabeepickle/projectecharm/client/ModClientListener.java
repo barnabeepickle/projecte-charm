@@ -1,7 +1,7 @@
 package com.github.barnabeepickle.projectecharm.client;
 
 import com.github.barnabeepickle.projectecharm.CharmMod;
-import com.github.barnabeepickle.projectecharm.items.TransMutationCharm;
+import com.github.barnabeepickle.projectecharm.items.TransGenderMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
 import com.github.barnabeepickle.projectecharm.networking.messages.UseCharmMessage;
@@ -42,7 +42,7 @@ public class ModClientListener {
 
     @SideOnly(Side.CLIENT)
     public static void useCharmClient(EntityPlayer player) {
-        if (CharmMod.checkForBaubleByClass(player, TransmutationCharm.class) || CharmMod.checkForBaubleByClass(player, TransMutationCharm.class)) {
+        if (CharmMod.checkForBaubleByClass(player, TransmutationCharm.class) || CharmMod.checkForBaubleByClass(player, TransGenderMutationCharm.class)) {
             NetworkHandler.INSTANCE.sendToServer(new UseCharmMessage(TRANSMUTATION_CHARM_ACTION));
         }
     }
