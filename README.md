@@ -2,7 +2,7 @@
 
 ![ProjectE Charms Banner](/asset_source/blender/banner_downscaled.png)
 
-An experimental ProjectE content addon for the 1.12.2 Cleanroom Mod Loader.
+An experimental ProjectE content addon for the 1.12.2 [Cleanroom Loader](https://github.com/CleanroomMC/Cleanroom).
 
 ## Dependencies
 
