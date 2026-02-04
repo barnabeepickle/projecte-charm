@@ -4,6 +4,8 @@
 
 An experimental ProjectE content addon for the 1.12.2 [Cleanroom Loader](https://github.com/CleanroomMC/Cleanroom).
 
+[Modrinth Page](https://modrinth.com/mod/projecte-charms)
+
 ## Dependencies
 
  - [Cleanroom](https://github.com/CleanroomMC/Cleanroom) Mod Loader tested using `0.3.31-alpha` & `0.4.0-alpha`
