@@ -2,7 +2,6 @@ package com.github.barnabeepickle.projectecharm.items;
 
 import moze_intel.projecte.api.ProjectEAPI;
 import moze_intel.projecte.api.proxy.IEMCProxy;
-import moze_intel.projecte.emc.SimpleStack;
 import net.minecraft.item.ItemStack;
 import org.jspecify.annotations.NonNull;
 
@@ -10,7 +9,6 @@ import javax.annotation.Nonnull;
 
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.FLOPPY_DISK_5;
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.TRANSMUTATION_FLOPPY_DISK_5;
-import moze_intel.projecte.emc.EMCMapper;
 
 public class TransmutationFloppyDisk5 extends FloppyDisk5 {
     public TransmutationFloppyDisk5() {
@@ -25,8 +23,13 @@ public class TransmutationFloppyDisk5 extends FloppyDisk5 {
         return name;
     }
 
-    public static void fixEMC() {
+    public static long getValueEMC() {
         IEMCProxy proxy = ProjectEAPI.getEMCProxy();
-        proxy.registerCustomEMC(new ItemStack(TRANSMUTATION_FLOPPY_DISK_5), proxy.getValue(FLOPPY_DISK_5));
+        return proxy.getValue(FLOPPY_DISK_5);
+    }
+
+    public static void setValueEMC(long value) {
+        IEMCProxy proxy = ProjectEAPI.getEMCProxy();
+        proxy.registerCustomEMC(new ItemStack(TRANSMUTATION_FLOPPY_DISK_5), value);
     }
 }
