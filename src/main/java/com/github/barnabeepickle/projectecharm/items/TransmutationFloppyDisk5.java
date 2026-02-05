@@ -1,0 +1,32 @@
+package com.github.barnabeepickle.projectecharm.items;
+
+import moze_intel.projecte.api.ProjectEAPI;
+import moze_intel.projecte.api.proxy.IEMCProxy;
+import moze_intel.projecte.emc.SimpleStack;
+import net.minecraft.item.ItemStack;
+import org.jspecify.annotations.NonNull;
+
+import javax.annotation.Nonnull;
+
+import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.FLOPPY_DISK_5;
+import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.TRANSMUTATION_FLOPPY_DISK_5;
+import moze_intel.projecte.emc.EMCMapper;
+
+public class TransmutationFloppyDisk5 extends FloppyDisk5 {
+    public TransmutationFloppyDisk5() {
+        this.setTranslationKey(name);
+        this.setMaxStackSize(64);
+    }
+
+    @Nonnull
+    private static final String name = "transmutation_floppy_disk_5";
+
+    public static @NonNull String getName() {
+        return name;
+    }
+
+    public static void fixEMC() {
+        IEMCProxy proxy = ProjectEAPI.getEMCProxy();
+        proxy.registerCustomEMC(new ItemStack(TRANSMUTATION_FLOPPY_DISK_5), proxy.getValue(FLOPPY_DISK_5));
+    }
+}
