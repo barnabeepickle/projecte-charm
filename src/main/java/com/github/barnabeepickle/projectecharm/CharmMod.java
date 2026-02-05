@@ -3,6 +3,7 @@ package com.github.barnabeepickle.projectecharm;
 import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
 import com.github.barnabeepickle.projectecharm.client.ModClientListener;
+import com.github.barnabeepickle.projectecharm.event.FloppyDiskImprintEvent;
 import com.github.barnabeepickle.projectecharm.event.ModBlocksEvent;
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
@@ -13,6 +14,7 @@ import net.minecraftforge.client.settings.KeyConflictContext;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -47,6 +49,11 @@ public class CharmMod {
 
         MinecraftForge.EVENT_BUS.register(ModClientListener.class);
         //LOGGER.info("Registered " + Tags.MOD_NAME + " CharmMod.ClientEventListener.class on the EVENT_BUS");
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(FloppyDiskImprintEvent.class);
     }
 
     public static boolean checkForBaubleByClass(EntityPlayer player, Class<?> clazz) {
