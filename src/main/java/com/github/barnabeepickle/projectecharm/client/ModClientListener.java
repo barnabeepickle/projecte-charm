@@ -59,6 +59,8 @@ public class ModClientListener {
         registerItem(TRANSMUTATION_CHARM);
         registerItem(TRANS_MUTATION_CHARM);
         registerItem(TRANS_MUTATION_TABLET);
+        registerItem(FLOPPY_DISK_5);
+        registerItem(TRANSMUTATION_FLOPPY_DISK_5);
     }
 
     // Item model registration utilities
