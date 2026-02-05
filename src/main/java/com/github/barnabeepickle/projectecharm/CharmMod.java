@@ -34,7 +34,7 @@ public class CharmMod {
     private static final String keyCategory = "key.category." + Tags.MODID;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
+    public void preLoadEvent(FMLPreInitializationEvent event) {
         NetworkHandler.initMessages();
         //LOGGER.info("Registered " + Tags.MOD_NAME + " network packets");
 
@@ -52,7 +52,7 @@ public class CharmMod {
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
+    public void loadEvent(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(FloppyDiskImprintEvent.class);
     }
 
