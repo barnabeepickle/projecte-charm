@@ -12,5 +12,26 @@
       "type": "forge:ore_dict",
       "ore": "dyeBlack"
     }
+  },
+  {
+    "name": "GLASS",
+    "ingredient": {
+      "type": "forge:ore_dict",
+      "ore": "blockGlass"
+    }
+  },
+  {
+    "name": "GREENDYE",
+    "ingredient": {
+      "type": "forge:ore_dict",
+      "ore": "dyeGreen"
+    }
+  },
+  {
+    "name": "LIMEDYE",
+    "ingredient": {
+      "type": "forge:ore_dict",
+      "ore": "dyeLime"
+    }
   }
 ]

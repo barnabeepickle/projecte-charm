@@ -62,6 +62,7 @@ public class ModClientListener {
         registerItem(FLOPPY_DISK_5);
         registerItem(TRANSMUTATION_FLOPPY_DISK_5);
         registerItem(PC_XT_PSU);
+        registerItem(PCB);
     }
 
     // Item model registration utilities

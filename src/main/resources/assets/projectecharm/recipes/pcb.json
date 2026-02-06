@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "#GLASS"
+    },
+    {
+      "item": "#GREENDYE"
+    },
+    {
+      "item": "#LIMEDYE"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "projectecharm:pcb"
+  }
+}
