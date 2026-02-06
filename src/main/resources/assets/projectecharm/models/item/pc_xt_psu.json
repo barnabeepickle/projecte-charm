@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "items/pc_xt_psu",
-		"particle": "items/pc_xt_psu"
+		"0": "projectecharm:items/pc_xt_psu",
+		"particle": "projectecharm:items/pc_xt_psu"
 	},
 	"elements": [
 		{
