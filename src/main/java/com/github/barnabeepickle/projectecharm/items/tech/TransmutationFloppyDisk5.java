@@ -1,4 +1,4 @@
-package com.github.barnabeepickle.projectecharm.items;
+package com.github.barnabeepickle.projectecharm.items.tech;
 
 import moze_intel.projecte.api.ProjectEAPI;
 import moze_intel.projecte.api.proxy.IEMCProxy;

@@ -8,6 +8,7 @@ import com.github.barnabeepickle.projectecharm.event.ModBlocksEvent;
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraftforge.client.settings.KeyConflictContext;
@@ -28,6 +29,8 @@ public class CharmMod {
 
     @SuppressWarnings("unused")
     public static final Logger LOGGER = LogManager.getLogger(Tags.MOD_NAME);
+
+    public static final CreativeTabs techCreativeTab = new ModTechTab();
 
     public static KeyBinding charmKeybind;
 
