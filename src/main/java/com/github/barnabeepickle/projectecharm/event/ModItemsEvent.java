@@ -2,10 +2,12 @@ package com.github.barnabeepickle.projectecharm.event;
 
 import com.github.barnabeepickle.projectecharm.blocks.BigTransmutationTable;
 import com.github.barnabeepickle.projectecharm.blocks.TransGenderMutationTable;
+import com.github.barnabeepickle.projectecharm.blocks.TransmutationClonePC;
 import com.github.barnabeepickle.projectecharm.blocks.UpsideDownTransmutationTable;
 import com.github.barnabeepickle.projectecharm.items.TransGenderMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransGenderMutationTablet;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
+import com.github.barnabeepickle.projectecharm.items.custom.TransmutationBlockItem;
 import com.github.barnabeepickle.projectecharm.items.tech.FloppyDisk5;
 import com.github.barnabeepickle.projectecharm.items.tech.PowerSuppply;
 import com.github.barnabeepickle.projectecharm.items.tech.PrintedCircuitBoard;
@@ -30,7 +32,8 @@ public class ModItemsEvent {
 
     public static ItemTransmutationBlock ITEM_TRANS_MUTATION_TABLE = new ItemTransmutationBlock(TRANS_MUTATION_TABLE);
     public static ItemTransmutationBlock ITEM_UPSIDE_DOWN_TRANSMUTATION_TABLE = new ItemTransmutationBlock(UPSIDE_DOWN_TRANSMUTATION_TABLE);
-    public static ItemTransmutationBlock ITEM_BIG_TRANSMUTATION_TABLE = new ItemTransmutationBlock(BIG_TRANSMUTATION_TABLE);
+    public static ItemTransmutationBlock ITEM_BIG_TRANSMUTATION_TABLE = new TransmutationBlockItem(BIG_TRANSMUTATION_TABLE, 16);
+    public static ItemTransmutationBlock ITEM_TRANSMUTATION_PC = new TransmutationBlockItem(TRANSMUTATION_PC, 1);
 
     @SubscribeEvent
     public static void registerItemsEvent(RegistryEvent.Register<Item> event) {
@@ -49,5 +52,6 @@ public class ModItemsEvent {
         registerEntry(itemEvent, ITEM_TRANS_MUTATION_TABLE, TransGenderMutationTable.getName());
         registerEntry(itemEvent, ITEM_UPSIDE_DOWN_TRANSMUTATION_TABLE, UpsideDownTransmutationTable.getName());
         registerEntry(itemEvent, ITEM_BIG_TRANSMUTATION_TABLE, BigTransmutationTable.getName());
+        registerEntry(itemEvent, ITEM_TRANSMUTATION_PC, TransmutationClonePC.getName());
     }
 }

@@ -80,13 +80,14 @@ public class ModClientListener {
 
     public static void registerBlockItemModels() {
         // register block item models here
-        registerItemBlock(TRANS_MUTATION_TABLE);
-        registerItemBlock(UPSIDE_DOWN_TRANSMUTATION_TABLE);
-        registerItemBlock(BIG_TRANSMUTATION_TABLE);
+        registerBlockItem(TRANS_MUTATION_TABLE);
+        registerBlockItem(UPSIDE_DOWN_TRANSMUTATION_TABLE);
+        registerBlockItem(BIG_TRANSMUTATION_TABLE);
+        registerBlockItem(TRANSMUTATION_PC);
     }
 
     // Block Item model registration utility
-    private static void registerItemBlock(Block block)
+    private static void registerBlockItem(Block block)
     {
         String name = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)).toString();
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(name, "inventory"));

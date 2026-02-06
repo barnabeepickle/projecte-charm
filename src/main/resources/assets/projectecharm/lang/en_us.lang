@@ -22,3 +22,6 @@ tile.upside_down_transmutation_table.name=Table Transmutation
 
 tile.big_transmutation_table.name=Big Transmutation Table
 tile.big_transmutation_table.tooltip=Exactly what it says on the tin.
+
+tile.transmutation_pc.name=IBM PC Clone
+tile.transmutation_pc.tooltip=Running Transmutation Software
