@@ -51,7 +51,7 @@ public class ModClientListener {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent evt) {
         registerItemModels();
-        registerItemBlockModels();
+        registerBlockItemModels();
     }
 
     public static void registerItemModels() {
@@ -61,6 +61,7 @@ public class ModClientListener {
         registerItem(TRANS_MUTATION_TABLET);
         registerItem(FLOPPY_DISK_5);
         registerItem(TRANSMUTATION_FLOPPY_DISK_5);
+        registerItem(PC_XT_PSU);
     }
 
     // Item model registration utilities
@@ -76,7 +77,7 @@ public class ModClientListener {
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name, "inventory"));
     }
 
-    public static void registerItemBlockModels() {
+    public static void registerBlockItemModels() {
         // register block item models here
         registerItemBlock(TRANS_MUTATION_TABLE);
         registerItemBlock(UPSIDE_DOWN_TRANSMUTATION_TABLE);
