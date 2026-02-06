@@ -5,5 +5,12 @@
       "type": "forge:ore_dict",
       "ore": "stone"
     }
+  },
+  {
+    "name": "BLACKDYE",
+    "ingredient": {
+      "type": "forge:ore_dict",
+      "ore": "dyeBlack"
+    }
   }
 ]

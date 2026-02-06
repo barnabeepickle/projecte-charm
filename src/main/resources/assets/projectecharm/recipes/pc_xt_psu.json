@@ -1,0 +1,23 @@
+{
+  "pattern": [
+    "IRR",
+    "III",
+    "B  "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "B": {
+      "item": "#BLACKDYE"
+    }
+  },
+  "result": {
+    "item": "projectecharm:pc_xt_psu",
+    "count": 1
+  }
+}
