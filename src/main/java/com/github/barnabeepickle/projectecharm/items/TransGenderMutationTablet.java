@@ -1,9 +1,8 @@
 package com.github.barnabeepickle.projectecharm.items;
 
 import com.github.barnabeepickle.projectecharm.items.custom.TransmutationTablet;
+import jakarta.annotation.Nonnull;
 import org.jspecify.annotations.NonNull;
-
-import javax.annotation.Nonnull;
 
 public class TransGenderMutationTablet extends TransmutationTablet {
     public TransGenderMutationTablet() {

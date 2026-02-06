@@ -1,11 +1,10 @@
 package com.github.barnabeepickle.projectecharm.items.tech;
 
+import jakarta.annotation.Nonnull;
 import moze_intel.projecte.api.ProjectEAPI;
 import moze_intel.projecte.api.proxy.IEMCProxy;
 import net.minecraft.item.ItemStack;
 import org.jspecify.annotations.NonNull;
-
-import javax.annotation.Nonnull;
 
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.FLOPPY_DISK_5;
 import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.TRANSMUTATION_FLOPPY_DISK_5;

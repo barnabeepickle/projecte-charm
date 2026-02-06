@@ -1,12 +1,11 @@
 package com.github.barnabeepickle.projectecharm;
 
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
+import jakarta.annotation.Nonnull;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import javax.annotation.Nonnull;
 
 public class ModTechTab extends CreativeTabs {
     public ModTechTab()

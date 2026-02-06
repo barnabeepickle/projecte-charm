@@ -1,8 +1,7 @@
 package com.github.barnabeepickle.projectecharm.items;
 
+import jakarta.annotation.Nonnull;
 import org.jspecify.annotations.NonNull;
-
-import javax.annotation.Nonnull;
 
 public class TransGenderMutationCharm extends TransmutationCharm {
     public TransGenderMutationCharm() {

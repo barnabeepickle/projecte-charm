@@ -3,6 +3,8 @@ package com.github.barnabeepickle.projectecharm.items;
 import baubles.api.IBauble;
 import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.custom.TransmutationTablet;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 import moze_intel.projecte.PECore;
 import moze_intel.projecte.utils.ClientKeyHelper;
 import moze_intel.projecte.utils.Constants;
@@ -16,8 +18,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jspecify.annotations.NonNull;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.List;
 
 @Optional.Interface(iface = "baubles.api.IBauble", modid = "baubles")

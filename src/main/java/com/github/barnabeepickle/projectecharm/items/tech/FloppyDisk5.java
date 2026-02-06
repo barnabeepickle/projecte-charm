@@ -2,9 +2,8 @@ package com.github.barnabeepickle.projectecharm.items.tech;
 
 import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.custom.ItemProjectE;
+import jakarta.annotation.Nonnull;
 import org.jspecify.annotations.NonNull;
-
-import javax.annotation.Nonnull;
 
 public class FloppyDisk5 extends ItemProjectE {
     public FloppyDisk5() {

@@ -1,6 +1,7 @@
 package com.github.barnabeepickle.projectecharm.items.custom;
 
 import com.github.barnabeepickle.projectecharm.Tags;
+import jakarta.annotation.Nonnull;
 import moze_intel.projecte.gameObjs.ObjHandler;
 import moze_intel.projecte.utils.EMCHelper;
 import moze_intel.projecte.utils.ItemHelper;
@@ -11,7 +12,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-import javax.annotation.Nonnull;
 import java.util.Objects;
 
 public class ItemProjectE extends Item {

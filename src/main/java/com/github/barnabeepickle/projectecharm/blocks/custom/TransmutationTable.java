@@ -1,11 +1,11 @@
 package com.github.barnabeepickle.projectecharm.blocks.custom;
 
+import jakarta.annotation.Nonnull;
 import moze_intel.projecte.gameObjs.blocks.TransmutationStone;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import org.jspecify.annotations.NonNull;
 
-import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class TransmutationTable extends TransmutationStone {

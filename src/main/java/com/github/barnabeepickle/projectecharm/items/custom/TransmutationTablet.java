@@ -1,5 +1,6 @@
 package com.github.barnabeepickle.projectecharm.items.custom;
 
+import jakarta.annotation.Nonnull;
 import moze_intel.projecte.PECore;
 import moze_intel.projecte.utils.Constants;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,8 +10,6 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import org.jspecify.annotations.NonNull;
-
-import javax.annotation.Nonnull;
 
 public class TransmutationTablet extends ItemProjectE {
     public TransmutationTablet() {

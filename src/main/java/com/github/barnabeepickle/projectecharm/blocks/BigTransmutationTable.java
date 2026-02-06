@@ -2,6 +2,7 @@ package com.github.barnabeepickle.projectecharm.blocks;
 
 import com.github.barnabeepickle.projectecharm.blocks.custom.TransmutationTable;
 import com.github.barnabeepickle.projectecharm.utils.BlockUtilities;
+import jakarta.annotation.Nonnull;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -10,7 +11,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import org.jspecify.annotations.NonNull;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 
 public class BigTransmutationTable extends TransmutationTable {

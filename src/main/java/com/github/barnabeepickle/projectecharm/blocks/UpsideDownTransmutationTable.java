@@ -1,13 +1,12 @@
 package com.github.barnabeepickle.projectecharm.blocks;
 
 import com.github.barnabeepickle.projectecharm.blocks.custom.TransmutationTable;
+import jakarta.annotation.Nonnull;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import org.jspecify.annotations.NonNull;
-
-import javax.annotation.Nonnull;
 
 public class UpsideDownTransmutationTable extends TransmutationTable {
     public UpsideDownTransmutationTable() {
