@@ -8,10 +8,7 @@ import com.github.barnabeepickle.projectecharm.items.TransGenderMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransGenderMutationTablet;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.items.custom.TransmutationBlockItem;
-import com.github.barnabeepickle.projectecharm.items.tech.FloppyDisk5;
-import com.github.barnabeepickle.projectecharm.items.tech.PowerSuppply;
-import com.github.barnabeepickle.projectecharm.items.tech.PrintedCircuitBoard;
-import com.github.barnabeepickle.projectecharm.items.tech.TransmutationFloppyDisk5;
+import com.github.barnabeepickle.projectecharm.items.tech.*;
 import moze_intel.projecte.gameObjs.items.itemBlocks.ItemTransmutationBlock;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
@@ -33,7 +30,7 @@ public class ModItemsEvent {
     public static ItemTransmutationBlock ITEM_TRANS_MUTATION_TABLE = new ItemTransmutationBlock(TRANS_MUTATION_TABLE);
     public static ItemTransmutationBlock ITEM_UPSIDE_DOWN_TRANSMUTATION_TABLE = new ItemTransmutationBlock(UPSIDE_DOWN_TRANSMUTATION_TABLE);
     public static ItemTransmutationBlock ITEM_BIG_TRANSMUTATION_TABLE = new TransmutationBlockItem(BIG_TRANSMUTATION_TABLE, 16);
-    public static ItemTransmutationBlock ITEM_TRANSMUTATION_PC = new TransmutationBlockItem(TRANSMUTATION_PC, 1);
+    public static TransmutationPCBlockItem ITEM_TRANSMUTATION_PC = new TransmutationPCBlockItem();
 
     @SubscribeEvent
     public static void registerItemsEvent(RegistryEvent.Register<Item> event) {
