@@ -1,5 +1,6 @@
 package com.github.barnabeepickle.projectecharm.items.tech;
 
+import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.custom.TransmutationBlockItem;
 import jakarta.annotation.Nullable;
 import net.minecraft.client.resources.I18n;
@@ -16,6 +17,7 @@ import static com.github.barnabeepickle.projectecharm.event.ModBlocksEvent.TRANS
 public class TransmutationPCBlockItem extends TransmutationBlockItem {
     public TransmutationPCBlockItem() {
         super(TRANSMUTATION_PC, 4);
+        this.setCreativeTab(CharmMod.techCreativeTab);
     }
 
     @Override
