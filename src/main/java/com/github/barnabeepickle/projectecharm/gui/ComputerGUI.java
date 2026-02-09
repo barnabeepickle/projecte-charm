@@ -22,7 +22,7 @@ import java.util.Locale;
 
 public class ComputerGUI extends GuiContainer
 {
-    public static ResourceLocation texture = new ResourceLocation(Tags.MODID, "textures/gui/pc.png");
+    public static ResourceLocation texture = new ResourceLocation(Tags.MODID, "textures/gui/computer.png");
     public final TransmutationInventory inv;
     public GuiTextField textBoxFilter;
 
