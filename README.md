@@ -8,7 +8,7 @@ An experimental ProjectE content addon for the 1.12.2 [Cleanroom Loader](https:/
 
 ## Dependencies
 
- - [Cleanroom](https://github.com/CleanroomMC/Cleanroom) Mod Loader tested using `0.3.31-alpha` & `0.4.0-alpha`
+ - [Cleanroom](https://github.com/CleanroomMC/Cleanroom) Mod Loader tested on version `0.3.31-alpha`+
  - [ProjectE](https://www.curseforge.com/minecraft/mc-mods/projecte) for 1.12.2
  - [Bubbles](https://www.curseforge.com/minecraft/mc-mods/bubbles-a-baubles-fork) (an updated fork of [Baubles](https://www.curseforge.com/minecraft/mc-mods/baubles))
 
