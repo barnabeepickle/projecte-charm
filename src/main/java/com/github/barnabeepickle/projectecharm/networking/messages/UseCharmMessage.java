@@ -43,7 +43,7 @@ public class UseCharmMessage implements IMessage {
                     case 0: // TRANSMUTATION_CHARM
                         if (CharmMod.checkForBaubleByClass(serverPlayer, TransmutationCharm.class) || CharmMod.checkForBaubleByClass(serverPlayer, TransGenderMutationCharm.class)) {
                             //CharmMod.LOGGER.info("Attempting to open transmutation GUI");
-                            TransmutationCharm.openTransmutationGUI(serverPlayer.world, serverPlayer);
+                            TransmutationCharm.openCharmGUI(serverPlayer.world, serverPlayer);
                         }
                         break;
                     default:

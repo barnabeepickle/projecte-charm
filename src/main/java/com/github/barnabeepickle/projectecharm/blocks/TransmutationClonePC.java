@@ -1,11 +1,16 @@
 package com.github.barnabeepickle.projectecharm.blocks;
 
+import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.blocks.custom.TransmutationTable;
+import com.github.barnabeepickle.projectecharm.networking.ModGUIHandler;
 import com.github.barnabeepickle.projectecharm.utils.BlockUtilities;
 import com.github.barnabeepickle.projectecharm.utils.BoundBox16;
 import jakarta.annotation.Nonnull;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -25,6 +30,15 @@ public class TransmutationClonePC extends TransmutationTable {
 
     public static @NonNull String getName() {
         return name;
+    }
+
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hintX, float hintY, float hintZ) {
+        if (!world.isRemote) {
+            player.openGui(CharmMod.INSTANCE, ModGUIHandler.COMPUTER_GUI, world, pos.getX(), pos.getY(), pos.getZ());
+        }
+
+        return true;
     }
 
     private static final AxisAlignedBB AABB = BoundBox16.Simple16(

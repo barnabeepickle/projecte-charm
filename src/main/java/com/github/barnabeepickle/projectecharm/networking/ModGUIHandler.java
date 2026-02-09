@@ -1,5 +1,7 @@
-package com.github.barnabeepickle.projectecharm.gui;
+package com.github.barnabeepickle.projectecharm.networking;
 
+import com.github.barnabeepickle.projectecharm.gui.ComputerGUI;
+import com.github.barnabeepickle.projectecharm.gui.TransGUI;
 import moze_intel.projecte.gameObjs.container.TransmutationContainer;
 import moze_intel.projecte.gameObjs.container.inventory.TransmutationInventory;
 import net.minecraft.entity.player.EntityPlayer;
