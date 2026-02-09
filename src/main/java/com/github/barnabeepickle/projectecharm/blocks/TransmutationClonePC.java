@@ -6,11 +6,18 @@ import com.github.barnabeepickle.projectecharm.networking.ModGUIHandler;
 import com.github.barnabeepickle.projectecharm.utils.BlockUtilities;
 import com.github.barnabeepickle.projectecharm.utils.BoundBox16;
 import jakarta.annotation.Nonnull;
+import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -20,9 +27,16 @@ import org.jspecify.annotations.NonNull;
 import java.util.List;
 
 public class TransmutationClonePC extends TransmutationTable {
+    public static final PropertyDirection FACING = BlockHorizontal.FACING;
+
     public TransmutationClonePC() {
         super();
         this.setTranslationKey(name);
+        this.setDefaultState(
+                this.blockState
+                        .getBaseState()
+                        .withProperty(FACING, EnumFacing.NORTH)
+        );
     }
 
     @Nonnull
@@ -84,5 +98,69 @@ public class TransmutationClonePC extends TransmutationTable {
                 13.0D,
                 15.0D
         );
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public IBlockState getStateForPlacement(
+            World world,
+            BlockPos blockPos,
+            EnumFacing facing,
+            float u,
+            float v,
+            float w,
+            int i,
+            EntityLivingBase entity
+    )
+    {
+        IBlockState blockstate = this.getDefaultState();
+        if (facing.getAxis().isHorizontal()) {
+            blockstate = blockstate.withProperty(FACING, facing);
+        }
+
+        return blockstate;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState()
+                .withProperty(FACING, EnumFacing.byHorizontalIndex(meta & 3));
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState blockState) {
+        int i = 0;
+        i |= blockState.getValue(FACING).getHorizontalIndex();
+
+        return i;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public IBlockState withRotation(IBlockState blockState, Rotation rotation) {
+        return blockState.withProperty(FACING, rotation.rotate(blockState.getValue(FACING)));
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public IBlockState withMirror(IBlockState blockState, Mirror mirror) {
+        return blockState.withRotation(mirror.toRotation(blockState.getValue(FACING)));
+    }
+
+    @Override
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, FACING);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public BlockFaceShape getBlockFaceShape(
+            IBlockAccess blockAccess,
+            IBlockState blockState,
+            BlockPos blockPos,
+            EnumFacing facing
+    ) {
+        return BlockFaceShape.UNDEFINED;
     }
 }
