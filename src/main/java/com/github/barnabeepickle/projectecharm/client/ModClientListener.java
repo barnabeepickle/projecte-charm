@@ -1,10 +1,8 @@
 package com.github.barnabeepickle.projectecharm.client;
 
-import com.github.barnabeepickle.projectecharm.CharmMod;
-import com.github.barnabeepickle.projectecharm.items.TransGenderMutationCharm;
-import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
 import com.github.barnabeepickle.projectecharm.networking.messages.UseCharmMessage;
+import com.github.barnabeepickle.projectecharm.utils.BaublesUtil;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -42,7 +40,7 @@ public class ModClientListener {
 
     @SideOnly(Side.CLIENT)
     public static void useCharmClient(EntityPlayer player) {
-        if (CharmMod.checkForBaubleByClass(player, TransmutationCharm.class) || CharmMod.checkForBaubleByClass(player, TransGenderMutationCharm.class)) {
+        if (BaublesUtil.hasBaubleEquipped(player, TRANSMUTATION_CHARM) || (BaublesUtil.hasBaubleEquipped(player, TRANS_MUTATION_CHARM))) {
             NetworkHandler.INSTANCE.sendToServer(new UseCharmMessage(TRANSMUTATION_CHARM_ACTION));
         }
     }

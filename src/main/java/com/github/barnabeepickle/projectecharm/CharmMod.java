@@ -63,19 +63,4 @@ public class CharmMod {
     public void loadEvent(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(FloppyDiskImprintEvent.class);
     }
-
-    public static boolean checkForBaubleByClass(EntityPlayer player, Class<?> clazz) {
-        IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
-
-        for(int i = 0; i < handler.getSlots(); ++i) {
-            //LOGGER.info("checking baubles {}, {}", handler.getStackInSlot(i).getItem().getClass(), i);
-            if (!handler.getStackInSlot(i).isEmpty() && handler.getStackInSlot(i).getItem() != Items.AIR) {
-                if (handler.getStackInSlot(i).getItem().getClass() == clazz) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
 }

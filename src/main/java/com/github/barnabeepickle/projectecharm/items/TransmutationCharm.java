@@ -6,7 +6,9 @@ import com.github.barnabeepickle.projectecharm.networking.ModGUIHandler;
 import com.github.barnabeepickle.projectecharm.items.custom.TransmutationTablet;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
+import moze_intel.projecte.PECore;
 import moze_intel.projecte.utils.ClientKeyHelper;
+import moze_intel.projecte.utils.Constants;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,9 +35,9 @@ public class TransmutationCharm extends TransmutationTablet implements IBauble {
         return name;
     }
 
-    public static void openCharmGUI(World world, EntityPlayer player) {
+    public void openCharmGUI(World world, EntityPlayer player) {
         if (!world.isRemote) {
-            player.openGui(CharmMod.INSTANCE, ModGUIHandler.CHARM_TRANS_GUI, world, -1, -1, -1);
+            player.openGui(PECore.MODID.toLowerCase(), Constants.TRANSMUTE_STONE_GUI, world, -1, -1, -1);
         }
     }
 

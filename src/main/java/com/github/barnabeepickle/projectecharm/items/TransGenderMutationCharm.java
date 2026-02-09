@@ -24,6 +24,13 @@ public class TransGenderMutationCharm extends TransmutationCharm {
         return name;
     }
 
+    @Override
+    public void openCharmGUI(World world, EntityPlayer player) {
+        if (!world.isRemote) {
+            player.openGui(CharmMod.INSTANCE, ModGUIHandler.CHARM_TRANS_GUI, world, -1, -1, -1);
+        }
+    }
+
     @Nonnull
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, @Nonnull EnumHand hand) {

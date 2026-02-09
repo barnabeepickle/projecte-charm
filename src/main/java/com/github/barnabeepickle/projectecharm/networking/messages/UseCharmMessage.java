@@ -3,11 +3,15 @@ package com.github.barnabeepickle.projectecharm.networking.messages;
 import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.items.TransGenderMutationCharm;
 import com.github.barnabeepickle.projectecharm.items.TransmutationCharm;
+import com.github.barnabeepickle.projectecharm.utils.BaublesUtil;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+
+import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.TRANSMUTATION_CHARM;
+import static com.github.barnabeepickle.projectecharm.event.ModItemsEvent.TRANS_MUTATION_CHARM;
 
 public class UseCharmMessage implements IMessage {
     public UseCharmMessage(){
@@ -41,9 +45,10 @@ public class UseCharmMessage implements IMessage {
             serverPlayer.getServerWorld().addScheduledTask(() -> {
                 switch (charmID) {
                     case 0: // TRANSMUTATION_CHARM
-                        if (CharmMod.checkForBaubleByClass(serverPlayer, TransmutationCharm.class) || CharmMod.checkForBaubleByClass(serverPlayer, TransGenderMutationCharm.class)) {
-                            //CharmMod.LOGGER.info("Attempting to open transmutation GUI");
-                            TransmutationCharm.openCharmGUI(serverPlayer.world, serverPlayer);
+                        if (BaublesUtil.hasBaubleEquipped(serverPlayer, TRANSMUTATION_CHARM)) {
+                            TRANSMUTATION_CHARM.openCharmGUI(serverPlayer.world, serverPlayer);
+                        } else if ((BaublesUtil.hasBaubleEquipped(serverPlayer, TRANS_MUTATION_CHARM))) {
+                            TRANS_MUTATION_CHARM.openCharmGUI(serverPlayer.world, serverPlayer);
                         }
                         break;
                     default:
