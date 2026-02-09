@@ -6,6 +6,7 @@ import com.github.barnabeepickle.projectecharm.client.ModClientListener;
 import com.github.barnabeepickle.projectecharm.event.FloppyDiskImprintEvent;
 import com.github.barnabeepickle.projectecharm.event.ModBlocksEvent;
 import com.github.barnabeepickle.projectecharm.event.ModItemsEvent;
+import com.github.barnabeepickle.projectecharm.gui.ModGUIHandler;
 import com.github.barnabeepickle.projectecharm.networking.NetworkHandler;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,6 +18,7 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjglx.input.Keyboard;
@@ -40,6 +42,7 @@ public class CharmMod {
     public void preLoadEvent(FMLPreInitializationEvent event) {
         NetworkHandler.initMessages();
         //LOGGER.info("Registered " + Tags.MOD_NAME + " network packets");
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new ModGUIHandler());
 
         MinecraftForge.EVENT_BUS.register(ModItemsEvent.class);
         //LOGGER.info("Registered " + Tags.MOD_NAME + " ModItemsEvent.class on the EVENT_BUS");
