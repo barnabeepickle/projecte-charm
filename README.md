@@ -14,7 +14,7 @@ An experimental ProjectE content addon for the 1.12.2 [Cleanroom Loader](https:/
 
 ### Features
 
-The following is a list of items added by this mod:
+The following is a list of items and blocks added by this mod:
 
  - The `Transmutation Charm` functions like the base Transmutation Tablet but when equiped as a bauble gives you a keybind that opens the Transmutation GUI.
  - The `Trans-mutation Charm` the same as the normal charm but with a trans flag on the texture.
@@ -22,6 +22,11 @@ The following is a list of items added by this mod:
  - The `Trans-mutation Table` a Transmutation Table with a trans flag on the top of it's texture.
  - The `Table Transmutation` an upside down Transmutation Table.
  - The `Big Transmutation Table` just a 2x scaled Transmutation Table.
+ - The `5¼-inch Floppy Disk` a crafting item.
+ - The `Corrupted 5¼-inch Floppy Disk` a crafting item created by using a transmutation table or variant well holding a normal 5¼-inch Floppy Disk.
+ - The `IBM PC XT Clone Power Supply` a crafting item.
+ - The `Printed Circut Board` a crafting item.
+ - The `IBM PC XT Clone` a Transmutation Table reskinned to look like an IBM PC clone.
 
 ### Why
 
