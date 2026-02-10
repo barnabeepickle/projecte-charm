@@ -20,6 +20,7 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import org.jspecify.annotations.NonNull;
@@ -111,14 +112,8 @@ public class TransmutationClonePC extends TransmutationTable {
             float w,
             int i,
             EntityLivingBase entity
-    )
-    {
-        IBlockState blockstate = this.getDefaultState();
-        if (facing.getAxis().isHorizontal()) {
-            blockstate = blockstate.withProperty(FACING, facing);
-        }
-
-        return blockstate;
+    ) {
+        return this.getDefaultState().withProperty(FACING, entity.getHorizontalFacing().getOpposite());
     }
 
     @SuppressWarnings("deprecation")
