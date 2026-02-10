@@ -32,6 +32,7 @@ public class TransmutationClonePC extends TransmutationTable {
     public TransmutationClonePC() {
         super();
         this.setTranslationKey(name);
+        this.setCreativeTab(CharmMod.techCreativeTab);
         this.setDefaultState(
                 this.blockState
                         .getBaseState()
