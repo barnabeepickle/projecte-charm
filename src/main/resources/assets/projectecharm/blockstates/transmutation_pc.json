@@ -6,6 +6,10 @@
   },
   "variants": {
     "normal": [{}],
-    "inventory": [{}]
+    "inventory": [{}],
+    "facing=north": [{}],
+    "facing=south": [{"model": "projectecharm:transmutation_pc", "y":  180}],
+    "facing=east": [{"model": "projectecharm:transmutation_pc", "y":  90}],
+    "facing=west": [{"model": "projectecharm:transmutation_pc", "y":  270}]
   }
 }
