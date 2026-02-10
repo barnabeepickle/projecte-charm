@@ -35,6 +35,27 @@ public class BlockUtilities {
         }
     }
 
+    public static void addBoundingBox(
+            AxisAlignedBB entityBoundingBox,
+            List<AxisAlignedBB> collidingBoxes,
+            BlockPos pos,
+            AxisAlignedBB aabb
+    ) {
+        AxisAlignedBB boundingBox = new AxisAlignedBB(
+                // min cords
+                pos.getX() + aabb.minX, // minX
+                pos.getY() + aabb.minY, // minY
+                pos.getZ() + aabb.minZ, // minZ
+                // max cords
+                pos.getX() + aabb.maxX, // maxX
+                pos.getY() + aabb.maxY, // maxY
+                pos.getZ() + aabb.maxZ  // maxZ
+        );
+        if (entityBoundingBox.intersects(boundingBox)) {
+            collidingBoxes.add(boundingBox);
+        }
+    }
+
     public static void addBoundingBox16(
             AxisAlignedBB entityBoundingBox,
             List<AxisAlignedBB> collidingBoxes,

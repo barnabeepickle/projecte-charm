@@ -44,8 +44,8 @@ public class BoundBoxUtilities {
         rotMat.rotY(angle); // rotate on the y axis
         rotMat.transform(vector);
 
-        vector.setX(Math.round(vector.getX() * 1000000D)/1000000D);
-        vector.setZ(Math.round(vector.getZ() * 1000000D)/1000000D);
+        vector.setX(Math.round(vector.getX() * 10000000D)/10000000D);
+        vector.setZ(Math.round(vector.getZ() * 10000000D)/10000000D);
 
         return vector;
     }
