@@ -15,7 +15,7 @@ item.transmutation_charm.tooltip.line1=%s to open the Transmutation Menu
 item.floppy_disk_5.name=5¼-inch Floppy Disk
 item.transmutation_floppy_disk_5.name=Corrupted 5¼-inch Floppy Disk
 item.pc_xt_psu.name=IBM PC XT Clone Power Supply
-item.pcb.name= Printed Circut Board
+item.pcb.name=Printed Circut Board
 
 tile.trans_mutation_table.name=Trans-mutation Table
 tile.upside_down_transmutation_table.name=Table Transmutation
