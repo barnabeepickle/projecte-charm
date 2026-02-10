@@ -4,7 +4,7 @@ import com.github.barnabeepickle.projectecharm.CharmMod;
 import com.github.barnabeepickle.projectecharm.blocks.custom.TransmutationTable;
 import com.github.barnabeepickle.projectecharm.networking.ModGUIHandler;
 import com.github.barnabeepickle.projectecharm.utils.BlockUtilities;
-import com.github.barnabeepickle.projectecharm.utils.BoundBox16;
+import com.github.barnabeepickle.projectecharm.utils.BoundBoxUtilities;
 import jakarta.annotation.Nonnull;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.PropertyDirection;
@@ -20,7 +20,6 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import org.jspecify.annotations.NonNull;
@@ -56,7 +55,7 @@ public class TransmutationClonePC extends TransmutationTable {
         return true;
     }
 
-    private static final AxisAlignedBB AABB = BoundBox16.Simple16(
+    private static final AxisAlignedBB AABB_NORTH = BoundBoxUtilities.simple16(
             // Used for the block outline
             1.0D, // minX
             0.0D, // minY
@@ -66,16 +65,31 @@ public class TransmutationClonePC extends TransmutationTable {
             16.0D // maxZ
     );
 
+    // Also used for the block outline but are generated best on AABB_NORTH (this can be unstable and hacky)
+    private static final AxisAlignedBB AABB_WEST = BoundBoxUtilities.rotHackAABB(AABB_NORTH);
+    private static final AxisAlignedBB AABB_SOUTH = BoundBoxUtilities.rotHackAABB(AABB_WEST);
+    private static final AxisAlignedBB AABB_EAST = BoundBoxUtilities.rotHackAABB(AABB_SOUTH);
+
     @Nonnull
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
-        return AABB;
+    public AxisAlignedBB getBoundingBox(IBlockState blockState, IBlockAccess world, BlockPos pos) {
+        EnumFacing facing = blockState.getValue(FACING);
+        return switch (facing) {
+            case EnumFacing.NORTH -> AABB_NORTH;
+            case EnumFacing.SOUTH -> AABB_SOUTH;
+            case EnumFacing.EAST -> AABB_EAST;
+            case EnumFacing.WEST -> AABB_WEST;
+            default -> {
+                CharmMod.LOGGER.warn("Invalid case in TransmutationClonePC.getBoundBox returning AABB_NORTH");
+                yield AABB_NORTH;
+            }
+        };
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public void addCollisionBoxToList(
-            IBlockState state,
+            IBlockState blockState,
             World world,
             BlockPos pos,
             AxisAlignedBB entityBoundingBox,
@@ -83,22 +97,100 @@ public class TransmutationClonePC extends TransmutationTable {
             Entity entity,
             boolean isStateReal
     ) {
-        BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
-                1.0D,
-                0.0D,
-                4.0D,
-                15.0D,
-                5.0D,
-                16.0D
-        );
-        BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
-                2.5D,
-                5.0D,
-                5.0D,
-                13.5D,
-                13.0D,
-                15.0D
-        );
+        EnumFacing facing = blockState.getValue(FACING);
+        switch (facing.getOpposite()) {
+            case EnumFacing.NORTH:
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        1.0D,
+                        0.0D,
+                        4.0D,
+                        15.0D,
+                        5.0D,
+                        16.0D
+                );
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        2.5D,
+                        5.0D,
+                        5.0D,
+                        13.5D,
+                        13.0D,
+                        15.0D
+                );
+                break;
+            case EnumFacing.SOUTH:
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        1.0D,
+                        0.0D,
+                        0.0D,
+                        15.0D,
+                        5.0D,
+                        12.0D
+                );
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        2.5D,
+                        5.0D,
+                        1.0D,
+                        13.5D,
+                        13.0D,
+                        11.0D
+                );
+                break;
+            case EnumFacing.EAST:
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        0.0D,
+                        0.0D,
+                        1.0D,
+                        12.0D,
+                        5.0D,
+                        15.0D
+                );
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        1.0D,
+                        5.0D,
+                        2.5D,
+                        11.0D,
+                        13.0D,
+                        13.5D
+                );
+                break;
+            case EnumFacing.WEST:
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        4.0D,
+                        0.0D,
+                        1.0D,
+                        16.0D,
+                        5.0D,
+                        15.0D
+                );
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        5.0D,
+                        5.0D,
+                        2.5D,
+                        15.0D,
+                        13.0D,
+                        13.5D
+                );
+                break;
+            default:
+                CharmMod.LOGGER.warn("Invalid case in TransmutationClonePC.addCollisionBoxToList applying values for EnumFacing.NORTH");
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        1.0D,
+                        0.0D,
+                        4.0D,
+                        15.0D,
+                        5.0D,
+                        16.0D
+                );
+                BlockUtilities.addBoundingBox16(entityBoundingBox, collisionBoundingBoxes, pos,
+                        2.5D,
+                        5.0D,
+                        5.0D,
+                        13.5D,
+                        13.0D,
+                        15.0D
+                );
+                break;
+        }
     }
 
     @SuppressWarnings("deprecation")
