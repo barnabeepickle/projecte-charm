@@ -126,7 +126,7 @@ public class TransmutationClonePC extends TransmutationTable {
             boolean isStateReal
     ) {
         EnumFacing facing = blockState.getValue(FACING);
-        switch (facing.getOpposite()) {
+        switch (facing) {
             case EnumFacing.NORTH:
                 BlockUtilities.addBoundingBox(entityBoundingBox, collisionBoundingBoxes, pos, C0_AABB_NORTH);
                 BlockUtilities.addBoundingBox(entityBoundingBox, collisionBoundingBoxes, pos, C1_AABB_NORTH);
